@@ -13,8 +13,7 @@ const CALENDAR_DAYS = [
 
 export default function BookCall() {
   return (
-    <section className="relative py-24 md:py-32 bg-gray-50 dark:bg-surface-dark transition-colors duration-300" id="book-call">
-
+    <section className="relative py-24 md:py-32 bg-gray-50/60 dark:bg-surface-dark/60 transition-colors duration-300 overflow-hidden" id="book-call">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
           {/* Left: Copy */}
@@ -87,7 +86,13 @@ export default function BookCall() {
               {/* Robot — anchored to the calendar card's top edge */}
               <FloatingRobot />
 
-              <div className="relative">
+              <div className="relative overflow-visible">
+                {/* Green ambient glow — behind calendar card */}
+                <div
+                  aria-hidden="true"
+                  className="absolute -top-[30%] -right-[25%] w-[700px] h-[650px] rounded-[50%] opacity-[0.30] dark:opacity-[0.14] blur-[180px] dark:blur-[220px] pointer-events-none animate-[glow-breathe_12s_ease-in-out_infinite_2s]"
+                  style={{ background: "radial-gradient(ellipse at 50% 55%, rgba(34,197,94,0.7) 0%, rgba(22,163,74,0.28) 45%, rgba(16,140,60,0.06) 65%, transparent 80%)" }}
+                />
                 <div className="absolute -inset-4 bg-gradient-to-r from-brand-primary/15 to-brand-secondary/15 rounded-3xl blur-2xl dark:opacity-50" />
 
               <div className="relative bg-white dark:bg-surface-dark-elevated border border-gray-200 dark:border-surface-dark-border rounded-2xl p-7 shadow-xl z-10">

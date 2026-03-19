@@ -50,8 +50,20 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 md:py-32 bg-gray-50 dark:bg-surface-dark transition-colors duration-300" id="how-it-works">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="relative py-24 md:py-32 bg-gray-50/60 dark:bg-surface-dark/60 transition-colors duration-300 overflow-hidden" id="how-it-works">
+      {/* ── Ambient glows: red (top-right) + gray (bottom-left) ── */}
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute -top-[40%] -right-[25%] w-[900px] h-[800px] rounded-[50%] opacity-[0.35] dark:opacity-[0.18] blur-[200px] dark:blur-[250px] animate-[glow-breathe_9s_ease-in-out_infinite]"
+          style={{ background: "radial-gradient(ellipse at 45% 55%, rgba(220,38,38,0.8) 0%, rgba(200,30,30,0.35) 45%, rgba(180,20,20,0.08) 65%, transparent 80%)" }}
+        />
+        <div
+          className="absolute -bottom-[35%] -left-[20%] w-[850px] h-[750px] rounded-[50%] opacity-[0.30] dark:opacity-[0.14] blur-[190px] dark:blur-[230px] animate-[glow-breathe_11s_ease-in-out_infinite_3s]"
+          style={{ background: "radial-gradient(ellipse at 55% 45%, rgba(120,120,130,0.7) 0%, rgba(100,100,110,0.25) 45%, rgba(80,80,90,0.05) 65%, transparent 80%)" }}
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,8 +86,8 @@ export default function HowItWorks() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Connecting line */}
-          <div className="hidden lg:block absolute top-[72px] left-[12.5%] right-[12.5%] h-[2px]">
+          {/* Connecting line — icon is 88px tall, center at 44px from top of grid cell */}
+          <div className="hidden lg:block absolute top-[44px] left-[12.5%] right-[12.5%] h-[2px] -translate-y-1/2">
             <div className="w-full h-full bg-gradient-to-r from-brand-primary/10 via-brand-primary/30 to-brand-primary/10 dark:from-brand-primary/5 dark:via-brand-primary/20 dark:to-brand-primary/5 rounded-full" />
           </div>
 

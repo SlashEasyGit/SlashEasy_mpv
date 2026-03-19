@@ -97,7 +97,14 @@ export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
 
   return (
-    <section className="py-24 md:py-32 bg-white dark:bg-surface-dark-card transition-colors duration-300" id="pricing">
+    <section className="relative py-24 md:py-32 bg-white/60 dark:bg-surface-dark-card/60 transition-colors duration-300 overflow-hidden" id="pricing">
+      {/* ── Ambient glow: cool blue (left-middle) ── */}
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute top-[8%] -left-[20%] w-[900px] h-[800px] rounded-[50%] opacity-[0.35] dark:opacity-[0.16] blur-[200px] dark:blur-[240px] animate-[glow-breathe_10s_ease-in-out_infinite_4s]"
+          style={{ background: "radial-gradient(ellipse at 55% 50%, rgba(59,130,246,0.7) 0%, rgba(37,99,235,0.3) 45%, rgba(29,78,216,0.06) 65%, transparent 80%)" }}
+        />
+      </div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div

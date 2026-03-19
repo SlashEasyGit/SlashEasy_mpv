@@ -75,8 +75,16 @@ const cardVariants = {
 
 export default function Services() {
   return (
-    <section className="py-24 md:py-32 bg-white dark:bg-surface-dark-card transition-colors duration-300" id="services">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="relative py-24 md:py-32 bg-white/60 dark:bg-surface-dark-card/60 transition-colors duration-300 overflow-hidden" id="services">
+      {/* ── Ambient glow: warm yellow (left-middle) ── */}
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute top-[10%] -left-[22%] w-[900px] h-[800px] rounded-[50%] opacity-[0.35] dark:opacity-[0.16] blur-[200px] dark:blur-[240px] animate-[glow-breathe_10s_ease-in-out_infinite_1s]"
+          style={{ background: "radial-gradient(ellipse at 55% 50%, rgba(234,179,8,0.75) 0%, rgba(220,165,5,0.3) 45%, rgba(200,150,0,0.06) 65%, transparent 80%)" }}
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -107,7 +115,7 @@ export default function Services() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={cardVariants}
-              className="group relative p-7 rounded-2xl bg-gray-50 dark:bg-surface-dark-elevated border border-gray-100 dark:border-surface-dark-border hover:border-brand-primary/20 dark:hover:border-brand-primary/30 hover:shadow-xl hover:shadow-brand-primary/[0.04] dark:hover:shadow-brand-primary/10 hover:scale-[1.02] transition-all duration-300"
+              className="group relative p-7 rounded-2xl bg-gray-50 dark:bg-surface-dark-elevated border border-gray-100 dark:border-surface-dark-border hover:border-brand-primary/20 dark:hover:border-brand-primary/30 ambient-card hover:scale-[1.02] transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-brand-light dark:bg-brand-primary/10 text-brand-primary flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-brand-primary group-hover:to-brand-secondary group-hover:text-white transition-all duration-300">
                 {s.icon}

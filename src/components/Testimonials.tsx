@@ -97,7 +97,7 @@ const COL_3 = TESTIMONIALS.filter((_, i) => i % 3 === 2);
 
 function TestimonialCard({ t }: { t: typeof TESTIMONIALS[0] }) {
   return (
-    <div className="group relative p-6 rounded-2xl bg-white dark:bg-surface-dark-elevated border border-gray-100 dark:border-surface-dark-border hover:border-brand-primary/20 dark:hover:border-brand-primary/30 shadow-sm hover:shadow-xl hover:shadow-brand-primary/[0.06] dark:hover:shadow-brand-primary/10 transition-all duration-300 mb-5">
+    <div className="group relative p-6 rounded-2xl bg-white dark:bg-surface-dark-elevated border border-gray-100 dark:border-surface-dark-border hover:border-brand-primary/20 dark:hover:border-brand-primary/30 ambient-card transition-all duration-300 mb-5">
       {/* Stars */}
       <div className="flex gap-1 mb-4">
         {Array.from({ length: 5 }).map((_, j) => (
