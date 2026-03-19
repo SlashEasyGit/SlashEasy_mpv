@@ -76,7 +76,7 @@ export default function Navbar() {
                 </svg>
               </div>
               <span className={`text-xl font-bold transition-colors duration-300 ${
-                scrolled ? "text-gray-900 dark:text-white" : "text-white"
+                scrolled ? "text-gray-900 dark:text-white" : "text-gray-900 dark:text-white"
               }`}>
                 SlashEasy
               </span>
@@ -91,7 +91,7 @@ export default function Navbar() {
                   className={`text-[15px] font-medium transition-colors duration-200 ${
                     scrolled
                       ? "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-                      : "text-white/80 hover:text-white"
+                      : "text-gray-600 dark:text-white/80 hover:text-gray-900 dark:hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -118,9 +118,9 @@ export default function Navbar() {
                 className="relative z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-pointer"
                 aria-label="Toggle menu"
               >
-                <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2 bg-gray-900 dark:bg-white" : scrolled ? "bg-gray-900 dark:bg-white" : "bg-white"}`} />
-                <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? "opacity-0" : scrolled ? "bg-gray-900 dark:bg-white" : "bg-white"}`} />
-                <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2 bg-gray-900 dark:bg-white" : scrolled ? "bg-gray-900 dark:bg-white" : "bg-white"}`} />
+                <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2 bg-gray-900 dark:bg-white" : scrolled ? "bg-gray-900 dark:bg-white" : "bg-gray-900 dark:bg-white"}`} />
+                <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? "opacity-0" : scrolled ? "bg-gray-900 dark:bg-white" : "bg-gray-900 dark:bg-white"}`} />
+                <span className={`block w-6 h-0.5 rounded-full transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2 bg-gray-900 dark:bg-white" : scrolled ? "bg-gray-900 dark:bg-white" : "bg-gray-900 dark:bg-white"}`} />
               </button>
             </div>
           </div>
