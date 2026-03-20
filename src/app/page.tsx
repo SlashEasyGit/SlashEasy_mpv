@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 import Services from "@/components/Services";
+import Portfolio from "@/components/Portfolio";
 import BookCall from "@/components/BookCall";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
@@ -48,6 +49,7 @@ export default function Home() {
       <HeroSection />
       <HowItWorks />
       <Services />
+      <Portfolio />
       <BookCall />
       <Pricing />
       <Testimonials />

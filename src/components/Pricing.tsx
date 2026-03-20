@@ -3,19 +3,19 @@
 import { motion } from "framer-motion";
 const PLANS = [
   {
-    name: "Starter",
-    monthlyPrice: "Free",
-    annualPrice: "Free",
-    period: "forever",
-    description: "Perfect for early-stage founders exploring options.",
+    name: "MVP Sprint",
+    monthlyPrice: "$999",
+    annualPrice: "$999",
+    period: "",
+    description: "Your idea, live in 7 days. Fixed scope, fixed timeline, no surprises.",
     features: [
-      "Free 30-min discovery call",
-      "MVP scope & feature list",
-      "Tech stack recommendation",
-      "Timeline estimate",
-      "No obligation",
+      "Auth + 3 core features",
+      "Database + API + deployment",
+      "Responsive UI",
+      "Source code handover",
+      "NDA signed Day 1",
     ],
-    cta: "Book Free Call",
+    cta: "Book Your Sprint",
     ctaHref: "#book-call",
     popular: false,
     icon: (
@@ -27,23 +27,19 @@ const PLANS = [
     ),
   },
   {
-    name: "Pro",
-    monthlyPrice: "$19",
-    annualPrice: "$15",
-    period: "/month",
-    annualBilled: "$180 billed yearly",
-    saveBadge: "Save 21%",
-    description: "Full MVP build with our senior development team.",
+    name: "MVP Sprint + Support",
+    monthlyPrice: "$1,499",
+    annualPrice: "$1,499",
+    period: "",
+    description: "Everything in Sprint + 14 days of post-launch support so you\u2019re never left alone.",
     features: [
-      "Everything in Starter",
-      "Full UI/UX design",
-      "Full-stack development",
-      "Database & API setup",
-      "Authentication & payments",
-      "Deployment & CI/CD",
-      "7-day delivery guarantee",
+      "Everything in MVP Sprint",
+      "14 days bug fixes post-launch",
+      "Minor feature tweaks",
+      "2\u00D730-min check-in calls",
+      "Priority Slack channel",
     ],
-    cta: "Start Your MVP",
+    cta: "Book This Plan",
     ctaHref: "#book-call",
     popular: true,
     icon: (
@@ -53,24 +49,19 @@ const PLANS = [
     ),
   },
   {
-    name: "Business",
-    monthlyPrice: "$79",
-    annualPrice: "$63",
-    period: "/month",
-    annualBilled: "$756 billed yearly",
-    saveBadge: "Save 20%",
-    description: "For teams that need ongoing development & priority support.",
+    name: "MVP + Roadmap",
+    monthlyPrice: "$1,999",
+    annualPrice: "$1,999",
+    period: "",
+    description: "Sprint + Support + a full product roadmap for when you\u2019re ready to scale.",
     features: [
-      "Everything in Pro",
-      "Priority queue (start within 48h)",
-      "Dedicated project manager",
-      "Post-launch iterations (2 weeks)",
-      "Performance monitoring",
-      "Advanced integrations",
-      "Source code + documentation",
-      "Slack channel support",
+      "Everything in Sprint + Support",
+      "Technical architecture doc",
+      "Full-scale product roadmap",
+      "Investor-ready tech overview",
+      "60-min strategy call",
     ],
-    cta: "Contact Us",
+    cta: "Book With Roadmap",
     ctaHref: "#book-call",
     popular: false,
     icon: (
@@ -92,8 +83,6 @@ const cardVariants = {
 };
 
 export default function Pricing() {
-  const isAnnual = true;
-
   return (
     <section className="relative py-24 md:py-32 bg-white/60 dark:bg-surface-dark-card/60 transition-colors duration-300 overflow-hidden" id="pricing">
       {/* ── Ambient glow: cool blue (left-middle) ── */}
@@ -120,7 +109,7 @@ export default function Pricing() {
             <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">pricing</span>
           </h2>
           <p className="mt-5 text-lg text-gray-500 dark:text-gray-400 leading-relaxed">
-            No hidden fees. No hourly billing. Fixed price, fixed timeline, clear deliverables.
+            No hidden fees. No hourly billing. 50% upfront to lock your start date &middot; 50% on delivery.
           </p>
         </motion.div>
 
@@ -151,7 +140,7 @@ export default function Pricing() {
                 {/* Popular badge */}
                 {plan.popular && (
                   <div className="absolute -top-px left-1/2 -translate-x-1/2">
-                    <span className="px-5 py-1.5 rounded-b-xl bg-gradient-to-r from-brand-primary to-brand-secondary text-white text-[12px] font-bold shadow-lg">
+                    <span className="px-5 py-1.5 rounded-b-xl bg-gradient-to-r from-brand-primary to-brand-secondary text-white text-[12px] font-bold shadow-lg uppercase tracking-wider">
                       Most Popular
                     </span>
                   </div>
@@ -188,44 +177,23 @@ export default function Pricing() {
                 {/* Price */}
                 <div className="mb-1">
                   <div className="flex items-baseline gap-1.5">
-                    {isAnnual && plan.annualPrice !== plan.monthlyPrice && (
-                      <span
-                        className={`text-2xl font-bold line-through mr-1 ${
-                          plan.popular ? "text-gray-500" : "text-gray-300 dark:text-gray-600"
-                        }`}
-                      >
-                        {plan.monthlyPrice}
-                      </span>
-                    )}
                     <span
                       className={`text-5xl font-extrabold tracking-tight ${
                         plan.popular ? "text-white" : "text-gray-900 dark:text-white"
                       }`}
                     >
-                      {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                      {plan.monthlyPrice}
                     </span>
-                    <span
-                      className={`text-sm font-medium ${
-                        plan.popular ? "text-gray-500" : "text-gray-400 dark:text-gray-500"
-                      }`}
-                    >
-                      {plan.period}
-                    </span>
-                    {isAnnual && plan.saveBadge && (
-                      <span className="ml-2 px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 text-[11px] font-bold">
-                        {plan.saveBadge}
+                    {plan.period && (
+                      <span
+                        className={`text-sm font-medium ${
+                          plan.popular ? "text-gray-500" : "text-gray-400 dark:text-gray-500"
+                        }`}
+                      >
+                        {plan.period}
                       </span>
                     )}
                   </div>
-                  {isAnnual && plan.annualBilled && (
-                    <p
-                      className={`text-xs mt-1.5 ${
-                        plan.popular ? "text-gray-500" : "text-gray-400 dark:text-gray-500"
-                      }`}
-                    >
-                      {plan.annualBilled}
-                    </p>
-                  )}
                 </div>
 
                 {/* Divider */}
@@ -274,29 +242,16 @@ export default function Pricing() {
                 </ul>
 
                 {/* CTA */}
-                {plan.cta === "Book Free Call" ? (
-                  <button
-                    onClick={() => document.getElementById("book-call")?.scrollIntoView({ behavior: "smooth" })}
-                    className={`relative block w-full py-3.5 rounded-2xl text-center font-semibold text-[15px] mt-8 transition-all duration-300 overflow-hidden group/btn cursor-pointer ${
-                      plan.popular
-                        ? "bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg shadow-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/40 hover:scale-[1.02] active:scale-[0.98]"
-                        : "bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
-                    }`}
-                  >
-                    <span className="relative z-10">{plan.cta}</span>
-                  </button>
-                ) : (
-                  <a
-                    href={plan.ctaHref}
-                    className={`relative block w-full py-3.5 rounded-2xl text-center font-semibold text-[15px] mt-8 transition-all duration-300 overflow-hidden group/btn ${
-                      plan.popular
-                        ? "bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg shadow-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/40 hover:scale-[1.02] active:scale-[0.98]"
-                        : "bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
-                    }`}
-                  >
-                    <span className="relative z-10">{plan.cta}</span>
-                  </a>
-                )}
+                <button
+                  onClick={() => document.getElementById("book-call")?.scrollIntoView({ behavior: "smooth" })}
+                  className={`relative block w-full py-3.5 rounded-2xl text-center font-semibold text-[15px] mt-8 transition-all duration-300 overflow-hidden group/btn cursor-pointer ${
+                    plan.popular
+                      ? "bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg shadow-brand-primary/25 hover:shadow-xl hover:shadow-brand-primary/40 hover:scale-[1.02] active:scale-[0.98]"
+                      : "bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+                  }`}
+                >
+                  <span className="relative z-10">{plan.cta} &rarr;</span>
+                </button>
               </div>
             </motion.div>
           ))}

@@ -77,14 +77,15 @@ body {
 
 /* ─── TidyCal embed overrides ────────────────────────────── */
 
-/* The embed div is the ONLY container — no wrapper needed */
+/* The embed div is the clipping container — radius + overflow here */
 .tidycal-embed {
+  border-radius: 0 !important;
+  overflow: hidden !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  border-radius: 0 !important;
 }
 
 /* Strip all injected intermediate elements */
@@ -97,14 +98,14 @@ body {
   padding: 0 !important;
 }
 
-/* iframe: the only visual element */
+/* iframe: slightly wider than parent to push scrollbar past the clip edge */
 .tidycal-embed iframe {
   border: none !important;
-  border-radius: 16px !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
   background: white;
   display: block;
-  width: 100% !important;
+  width: calc(100% + 18px) !important;
   min-height: 660px;
   margin: 0 !important;
   padding: 0 !important;

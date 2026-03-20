@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 
 const NAV_LINKS = [
   { label: "How it Works", href: "#how-it-works" },
   { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Pricing", href: "#pricing" },
   { label: "Testimonials", href: "#testimonials" },
 ];
@@ -70,16 +72,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-[72px]">
             {/* Logo */}
             <a href="#" className="relative z-10 flex items-center gap-2.5 flex-shrink-0">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center shadow-lg shadow-brand-primary/20">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className={`text-xl font-bold transition-colors duration-300 ${
-                scrolled ? "text-gray-900 dark:text-white" : "text-gray-900 dark:text-white"
-              }`}>
-                SlashEasy
-              </span>
+              <Image
+                src="/logo1.png"
+                alt="SlashEasy"
+                width={140}
+                height={36}
+                className="h-9 w-auto object-contain"
+                priority
+              />
             </a>
 
             {/* Desktop nav */}

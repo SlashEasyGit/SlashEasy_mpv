@@ -46,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
         {/* Prevent FOUC: apply dark class before paint */}
         <script
           dangerouslySetInnerHTML={{

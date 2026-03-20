@@ -10,6 +10,7 @@ const TESTIMONIALS = [
     role: "Founder, FinFlow",
     avatar: "#6C3FE6",
     initials: "PS",
+    stars: 5,
   },
   {
     quote: "I'd been quoted 3 months and $40K by agencies. SlashEasy delivered a better product in 7 days for a fraction of the cost.",
@@ -17,6 +18,7 @@ const TESTIMONIALS = [
     role: "CEO, NoteStack",
     avatar: "#8B5CF6",
     initials: "MC",
+    stars: 5,
   },
   {
     quote: "The process was incredibly smooth — daily updates, clean code, and they actually understood what I was building. Shipped on time, no excuses.",
@@ -24,6 +26,7 @@ const TESTIMONIALS = [
     role: "CTO, GreenLeaf",
     avatar: "#10B981",
     initials: "SW",
+    stars: 4,
   },
   {
     quote: "We used SlashEasy to validate our idea before raising. The MVP helped us close our pre-seed round in 3 weeks. Absolute game-changer.",
@@ -31,6 +34,7 @@ const TESTIMONIALS = [
     role: "Founder, Peleza",
     avatar: "#F59E0B",
     initials: "DO",
+    stars: 5,
   },
   {
     quote: "Their team is nothing short of fantastic — extremely helpful, incredibly quick, and utterly professional in every interaction. The quality of their work speaks volumes.",
@@ -38,6 +42,7 @@ const TESTIMONIALS = [
     role: "CEO, Deeper Signals",
     avatar: "#EC4899",
     initials: "RA",
+    stars: 5,
   },
   {
     quote: "Simon and the team are essential to my team. They strike the right balance of beautiful design and functional usability. Super efficient to implement.",
@@ -45,6 +50,7 @@ const TESTIMONIALS = [
     role: "EVP of Product, SmartCloud",
     avatar: "#3B82F6",
     initials: "SC",
+    stars: 4,
   },
   {
     quote: "Our product and website redesign went great. But more than that, SlashEasy was just amazing to work with and made the whole process fun and stress free.",
@@ -52,6 +58,7 @@ const TESTIMONIALS = [
     role: "CEO, ClickMagick",
     avatar: "#14B8A6",
     initials: "PK",
+    stars: 5,
   },
   {
     quote: "Their creativity-fueled technical skills resulted in visually stunning, user-friendly mobile app and web designs. An absolute pleasure working with such talented people.",
@@ -59,6 +66,7 @@ const TESTIMONIALS = [
     role: "Product Owner, Pix",
     avatar: "#F97316",
     initials: "MT",
+    stars: 4,
   },
   {
     quote: "Working with SlashEasy has been a breeze. They really nailed the details and delivered top-notch design. If you want things done right, they're your go-to.",
@@ -66,6 +74,7 @@ const TESTIMONIALS = [
     role: "Founder, Milte",
     avatar: "#A855F7",
     initials: "HD",
+    stars: 5,
   },
   {
     quote: "Reliable, fast, and easy. They came up with numerous options and worked really hard to create the perfect design for us. Couldn't be happier!",
@@ -73,6 +82,7 @@ const TESTIMONIALS = [
     role: "Co-Founder, Legacy Blueprint",
     avatar: "#EF4444",
     initials: "JS",
+    stars: 4,
   },
   {
     quote: "Working with SlashEasy has been a pleasure. They were fast, great in communication, and crafted an excellent design that exceeded expectations.",
@@ -80,6 +90,7 @@ const TESTIMONIALS = [
     role: "CEO, Prönö",
     avatar: "#06B6D4",
     initials: "HA",
+    stars: 5,
   },
   {
     quote: "After 7+ years in the SaaS industry, I can confidently say the team at SlashEasy is among the most talented I've worked with. They go above and beyond.",
@@ -87,6 +98,7 @@ const TESTIMONIALS = [
     role: "Marketing Lead, Stepsize",
     avatar: "#84CC16",
     initials: "AB",
+    stars: 5,
   },
 ];
 
@@ -101,7 +113,7 @@ function TestimonialCard({ t }: { t: typeof TESTIMONIALS[0] }) {
       {/* Stars */}
       <div className="flex gap-1 mb-4">
         {Array.from({ length: 5 }).map((_, j) => (
-          <svg key={j} width="14" height="14" viewBox="0 0 24 24" fill="#FBBF24">
+          <svg key={j} width="14" height="14" viewBox="0 0 24 24" fill={j < t.stars ? "#FBBF24" : "#D1D5DB"}>
             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
           </svg>
         ))}

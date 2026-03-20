@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const FOOTER_LINKS = {
   Product: ["How it Works", "Services", "Pricing", "FAQ"],
   Company: ["About", "Blog", "Careers", "Contact"],
@@ -43,12 +45,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-primary to-brand-secondary flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className="text-xl font-bold">SlashEasy</span>
+              <Image
+                src="/logo2.png"
+                alt="SlashEasy"
+                width={140}
+                height={36}
+                className="h-9 w-auto object-contain"
+              />
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-6 max-w-xs">
               We build production-ready MVPs in 7 days. Senior dev team + AI tooling.
