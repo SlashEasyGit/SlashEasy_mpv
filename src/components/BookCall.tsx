@@ -1,23 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import FloatingRobot from "./FloatingRobot";
 
 export default function BookCall() {
-  // Load TidyCal embed script once
-  useEffect(() => {
-    const existing = document.querySelector('script[src*="tidycal"]');
-    if (!existing) {
-      const script = document.createElement("script");
-      script.src = "https://asset-tidycal.b-cdn.net/js/embed.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
-
   return (
-    <section className="relative py-14 md:py-20 bg-[#F6FAFF] dark:bg-surface-dark-elevated transition-colors duration-300 overflow-hidden" id="book-call">
+    <section className="relative py-12 md:py-16 bg-[#F6FAFF] dark:bg-surface-dark-elevated transition-colors duration-300 overflow-hidden" id="book-call">
       {/* ── Ambient glow: purple/blue (left side) ── */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div
@@ -58,7 +46,14 @@ export default function BookCall() {
         className="relative max-w-7xl mx-auto px-4 lg:px-8"
       >
         <FloatingRobot />
-        <div className="tidycal-embed" data-path="slasheasy/free-30-min-mvp-discovery-call"></div>
+        <iframe
+          src="https://tidycal.com/slasheasy/free-30-min-mvp-discovery-call"
+          title="Book a Free Call — TidyCal"
+          className="w-full border-0"
+          scrolling="no"
+          style={{ height: "clamp(600px, 85vh, 1000px)", overflow: "hidden" }}
+          allow="payment"
+        />
       </motion.div>
 
       {/* Trust points */}
