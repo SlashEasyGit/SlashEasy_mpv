@@ -385,7 +385,7 @@ function HeroText({ center = false, dark }: { center?: boolean; dark: boolean })
 
       {/* Description */}
       <p className={`text-[15px] md:text-[16px] leading-relaxed mb-6 lg:mb-8 ${center ? "mx-auto max-w-md" : "max-w-lg"} ${dark ? "text-white/50" : "text-[#475569]"}`}>
-        Book a free call, tell us your idea, and our senior dev team + AI tooling will build, design, and ship your production-ready MVP — in one week. No long timelines. No bloated agencies. Just execution.
+        Book a free call, share your vision, and our senior dev team + AI tooling will build, design, and ship your production-ready MVP - in one week. No long timelines. No bloated agencies. Just execution.
       </p>
 
       {/* CTA Buttons */}

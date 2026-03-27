@@ -154,6 +154,60 @@ const SITE_PREVIEWS: Record<string, React.ReactNode> = {
       </div>
     </div>
   ),
+  InvoiceFlow: (
+    <div className="absolute inset-0 flex flex-col bg-gradient-to-br from-[#0b1120] via-[#0f1d35] to-[#0b1120]">
+      {/* Nav bar mock */}
+      <div className="flex items-center justify-between px-5 py-3 border-b border-white/5">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded bg-sky-500/80 flex items-center justify-center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div className="w-20 h-3 rounded bg-white/20" />
+        </div>
+        <div className="flex gap-2">
+          <div className="w-16 h-6 rounded-md bg-sky-500/70" />
+        </div>
+      </div>
+      {/* Invoice dashboard mock */}
+      <div className="flex-1 flex gap-3 p-4">
+        {/* Sidebar */}
+        <div className="w-10 flex flex-col gap-3 items-center pt-2">
+          <div className="w-6 h-6 rounded bg-sky-500/20" />
+          <div className="w-6 h-6 rounded bg-white/[0.06]" />
+          <div className="w-6 h-6 rounded bg-white/[0.06]" />
+          <div className="w-6 h-6 rounded bg-white/[0.06]" />
+        </div>
+        {/* Main content */}
+        <div className="flex-1 flex flex-col gap-2">
+          {/* Stats row */}
+          <div className="flex gap-2">
+            <div className="flex-1 h-12 rounded-lg bg-white/[0.04] border border-white/5 p-2">
+              <div className="w-10 h-1.5 rounded bg-sky-500/30 mb-1" />
+              <div className="w-14 h-3 rounded bg-white/15" />
+            </div>
+            <div className="flex-1 h-12 rounded-lg bg-white/[0.04] border border-white/5 p-2">
+              <div className="w-10 h-1.5 rounded bg-emerald-500/30 mb-1" />
+              <div className="w-12 h-3 rounded bg-white/15" />
+            </div>
+            <div className="flex-1 h-12 rounded-lg bg-white/[0.04] border border-white/5 p-2">
+              <div className="w-10 h-1.5 rounded bg-amber-500/30 mb-1" />
+              <div className="w-10 h-3 rounded bg-white/15" />
+            </div>
+          </div>
+          {/* Invoice table */}
+          <div className="flex-1 rounded-lg bg-white/[0.03] border border-white/5 p-2 flex flex-col gap-1.5">
+            <div className="flex gap-2 items-center"><div className="w-3 h-3 rounded bg-sky-500/20" /><div className="flex-1 h-1.5 rounded bg-white/10" /><div className="w-12 h-1.5 rounded bg-emerald-500/25" /><div className="w-8 h-4 rounded bg-emerald-500/20 flex items-center justify-center"><span className="text-[6px] text-emerald-400">Paid</span></div></div>
+            <div className="flex gap-2 items-center"><div className="w-3 h-3 rounded bg-sky-500/20" /><div className="flex-1 h-1.5 rounded bg-white/8" /><div className="w-12 h-1.5 rounded bg-white/10" /><div className="w-8 h-4 rounded bg-amber-500/20 flex items-center justify-center"><span className="text-[6px] text-amber-400">Due</span></div></div>
+            <div className="flex gap-2 items-center"><div className="w-3 h-3 rounded bg-sky-500/20" /><div className="flex-1 h-1.5 rounded bg-white/10" /><div className="w-12 h-1.5 rounded bg-white/10" /><div className="w-8 h-4 rounded bg-emerald-500/20 flex items-center justify-center"><span className="text-[6px] text-emerald-400">Paid</span></div></div>
+            <div className="flex gap-2 items-center"><div className="w-3 h-3 rounded bg-sky-500/20" /><div className="flex-1 h-1.5 rounded bg-white/8" /><div className="w-12 h-1.5 rounded bg-white/10" /><div className="w-8 h-4 rounded bg-red-500/20 flex items-center justify-center"><span className="text-[6px] text-red-400">Late</span></div></div>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center pb-3">
+        <span className="text-white font-bold text-sm">InvoiceFlow</span>
+      </div>
+    </div>
+  ),
   "Lead Catcher": (
     <div className="absolute inset-0 flex flex-col bg-gradient-to-br from-[#0a0e1a] via-[#111827] to-[#0a0e1a]">
       {/* Nav bar mock */}
@@ -236,6 +290,13 @@ const PORTFOLIO_ITEMS = [
     url: "https://taskflow-r6yp.onrender.com/",
     tags: ["React", "Node Js", "HTML 5", "CSS3"],
     embed: false, // blocks iframes via X-Frame-Options
+  },
+  {
+    title: "InvoiceFlow",
+    category: "Full-Stack SaaS",
+    url: "https://invoiceapp.slasheasy.com/",
+    tags: ["React", "Node Js", "JavaScript", "CSS3"],
+    embed: false,
   },
   {
     title: "Lead Catcher",

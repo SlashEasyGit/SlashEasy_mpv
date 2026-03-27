@@ -10,7 +10,7 @@ const INCLUDED = [
   "Live deployment + domain setup",
   "Source code + credentials",
   "Basic admin panel",
-  "NDA + daily Loom updates",
+  "NDA",
 ];
 
 const NOT_INCLUDED = [

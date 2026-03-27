@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 import Services from "@/components/Services";
 import ScopeClarity from "@/components/ScopeClarity";
+import DeliveredAndTech from "@/components/DeliveredAndTech";
 import Portfolio from "@/components/Portfolio";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
@@ -52,6 +53,7 @@ export default function Home() {
       <HowItWorks />
       <Services />
       <ScopeClarity />
+      <DeliveredAndTech />
       <Portfolio />
       <Pricing />
       <Testimonials />
